@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <% northBuses = Bus.getStopInfo("2061") %>
+    <% southBuses = Bus.getStopInfo("747") %>
+    <% northTrains = Dart.getStopInfo("brock", "Northbound") %>
+    <% southTrains = Dart.getStopInfo("perse", "Southbound") %>
+
+  </head>
+
+  <body>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <div class="container-fluid">
+    	<h2>Northbound</h2>
+    	<div class="table-responsive">
+    		<table>
+    			<thead>
+    				<h2>Dublin Bus - Knocksinna</h2>
+    				<tr>
+    					<th>Route </th>
+    					<th>Destination	</th>
+    					<th>Due In </th>
+    				</tr>
+    			</thead>
+    			<tbody>
+    				<tr>
+    					<% northBuses.take(5).each do |b| %>
+    					<td> <%= b.route %> </td>
+    					<td> <%= b.destination %> </td>
+    					<td> <%= b.departureduetime %> </td>
+    				</tr>
+    				<% end %>
+    			</tbody>
+    		</table>
+     	</div>
+
+     	<div class="table-responsive">
+    		<table>
+    			<thead>
+    				<h2>Dart - Blackrock</h2>
+    				<tr>
+    					<th>Train Type</th>
+    					<th>Destination</th>
+    					<th>Due In </th>
+    				</tr>
+    			</thead>
+    			<tbody>
+    				<tr>
+    					<% northTrains.take(5).each do |t| %>
+    					<td> <%= t.traintype %> </td>
+    					<td> <%= t.destination %> </td>
+    					<td> <%= t.duetime %> </td>
+    				</tr>
+    				<% end %>
+    			</tbody>
+    		</table>
+     	</div>
+     </div>
+
+	<div class="container-fluid">
+		<h2>Southbound</h2>
+     	<div class="table-responsive">
+    		<table>
+    			<thead>
+    				<h2>Dublin Bus - Kildare St.</h2>
+    				<tr>
+    					<th>Route </th>
+    					<th>Destination	</th>
+    					<th>Due In </th>
+    				</tr>
+    			</thead>
+    			<tbody>
+    				<tr>
+    					<% southBuses.take(5).each do |b| %>
+    					<td> <%= b.route %> </td>
+    					<td> <%= b.destination %> </td>
+    					<td> <%= b.departureduetime %> </td>
+    				</tr>
+    				<% end %>
+    			</tbody>
+    		</table>
+     	</div>
+
+     	<div class="table-responsive">
+    		<table>
+    			<thead>
+    				<h2>Dart - Pearse St.</h2>
+    				<tr>
+    					<th>Train Type</th>
+    					<th>Destination</th>
+    					<th>Due In </th>
+    				</tr>
+    			</thead>
+    			<tbody>
+    				<tr>
+    					<% southTrains.take(5).each do |t| %>
+    					<td> <%= t.traintype %> </td>
+    					<td> <%= t.destination %> </td>
+    					<td> <%= t.duetime %> </td>
+    				</tr>
+    				<% end %>
+    			</tbody>
+    		</table>
+     	</div>
+
+     	<p> <%= (DateTime.now).strftime("Updated on %d/%m/%Y at %H:%M%p") %></p>
+    </div>
+  </body>
+
+</html>
+
