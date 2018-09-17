@@ -20,68 +20,68 @@
 
     <div class="table-responsive">
         <h3>Northbound</h3>
-    	<table class="table table-striped">
-            <colgroup span="3"></colgroup>
-			<thead>
-				<tr>
-                    <th colspan="3" scope="colgroup">Dublin Bus - Knocksinna</th>
-                    <th colspan="3" scope="colgroup">DART - Blackrock</th>
-                </tr>
-				<tr>
-					<th>Route </th>
-					<th>Destination	</th>
-					<th>Due In </th>
-                    <th>Train Type</th>
-                    <th>Destination</th>
-                    <th>Due In </th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<% @northBuses.zip(@northTrains).take(5).each do |b,t| %>
-					<td> <%= b.route %> </td>
-					<td> <%= b.destination %> </td>
-					<td> <%= b.departureduetime %> </td>
-                    <td> <%= t.traintype %> </td>
-                    <td> <%= t.destination %> </td>
-                    <td> <%= t.duetime %> </td>
-				</tr>
-				<% end %>
-			</tbody>
-     	</table>
+        	<table class="table table-striped">
+                <colgroup span="3"></colgroup>
+    			<thead>
+    				<tr>
+                        <th colspan="3" scope="colgroup">Dublin Bus - Knocksinna</th>
+                        <th colspan="3" scope="colgroup">DART - Blackrock</th>
+                    </tr>
+    				<tr>
+    					<th>Route </th>
+    					<th>Destination	</th>
+    					<th>Due In </th>
+                        <!-- <th>Train Type</th> -->
+                        <th>Destination</th>
+                        <th>Due In </th>
+    				</tr>
+    			</thead>
+    			<tbody>
+    				<tr>
+    					<% @northBuses.zip(@northTrains).take(5).each do |b,t| %>
+    					<td> <%= b.route %> </td>
+    					<td> <%= b.destination %> </td>
+    					<td> <%= b.departureduetime %> </td>
+                        <!-- <td> <%= t.traintype %> </td> -->
+                        <td> <%= t.destination %> </td>
+                        <td> <%= t.duetime %> </td>
+    				</tr>
+    				<% end %>
+    			</tbody>
+         	</table>
     </div>
 
 	<div class="table-responsive">
 		<h3>Southbound</h3>
-     	<table class="table table-striped">
-            <colgroup span="3"></colgroup>
-			<thead>
-				<tr>
-                    <th colspan="3" scope="colgroup">Dublin Bus - Dawson St.</th>
-                    <th colspan="3" scope="colgroup">DART - Pearse St.</th>
-                </tr>
-				<tr>
-					<th>Route </th>
-					<th>Destination	</th>
-					<th>Due In </th>
-                    <th>Train Type</th>
-                    <th>Destination</th>
-                    <th>Due In </th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<% @southBuses.zip(@southTrains).take(5).each do |b,t| %>
-					<td> <%= b.route %> </td>
-					<td> <%= b.destination %> </td>
-					<td> <%= b.departureduetime %> </td>
-                    <td> <%= t.traintype %> </td>
-                    <td> <%= t.destination %> </td>
-                    <td> <%= t.duetime %> </td>
-				</tr>
-				<% end %>
-			</tbody>
-     	</table>
+         	<table class="table table-striped">
+                <colgroup span="3"></colgroup>
+    			<thead>
+    				<tr>
+                        <th colspan="3" scope="colgroup">Dublin Bus - Dawson St.</th>
+                        <th colspan="3" scope="colgroup">DART - Pearse St.</th>
+                    </tr>
+    				<tr>
+    					<th>Route </th>
+    					<th>Destination	</th>
+    					<th>Due In </th>
+                        <!-- <th>Train Type</th> -->
+                        <th>Destination</th>
+                        <th>Due In </th>
+    				</tr>
+    			</thead>
+    			<tbody>
+    				<tr>
+    					<% @southBuses.zip(@southTrains).take(5).each do |b,t| %>
+    					<td> <%= b.route %> </td>
+    					<td> <%= b.destination %> </td>
+    					<td> <%= b.departureduetime %> </td>
+                        <!-- <td> <%= t.traintype %> </td> -->
+                        <td> <%= t.destination %> </td>
+                        <td> <%= t.duetime %> </td>
+    				</tr>
+    				<% end %>
+    			</tbody>
+         	</table>
     </div>
 
     <div>

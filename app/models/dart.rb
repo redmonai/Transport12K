@@ -13,7 +13,7 @@ class Dart < ApplicationRecord
 		doc.xpath("//objStationData").each do |train|
 			tempTrain = Dart.new
 			tempTrain.destination = train.xpath('Destination').text.to_s
-			tempTrain.traintype = train.xpath('Traintype').text.to_s
+			# tempTrain.traintype = train.xpath('Traintype').text.to_s
 			tempTrain.duetime = train.xpath('Duein').text.to_s
 			if train.xpath('Direction').text.to_s == direction
 				trains << tempTrain	
